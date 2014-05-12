@@ -28,6 +28,14 @@ describe("Rock-Paper-Scissors", function() {
 
       });
 
+      it('should crushes lizard', function() {
+
+        player1.picks('rock');
+        player2.picks('lizard');
+        expect(game.winner()).toBe(player1);
+        
+      });
+
     });
 
     describe('paper', function() {
