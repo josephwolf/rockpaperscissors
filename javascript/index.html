@@ -1,0 +1,43 @@
+<!doctype>
+<html>
+	<head>
+		<title>I made a game. :3</title>
+	</head>
+	<body>
+		<h1>CHOOSE YOUR DESTINY</h1>
+
+		<div class='choices'>
+			<a href="#" data-pick="rock">rock</a>
+			<a href="#" data-pick="scissors">scissors</a>
+			<a href="#" data-pick="paper">paper</a>
+			<a href="#" data-pick="lizard">lizard</a>
+			<a href="#" data-pick="spock">spock</a>
+
+
+		</div>
+		<ul id='results'>
+		</ul>
+
+		<script src="lib/RockPaperScissors.js"></script>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		<script>
+			$(document).ready(function(){
+
+				var human = new Player('Human');
+				var computer = new Player('Computer');
+				var game = new Game(human, computer);
+
+
+				$('.choices a').on('click', function(){
+					human.picks($(this).data('pick'));
+					computer.picks(game.randChoice());
+
+				$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+
+				$('li:nth-child(5)').fadeOut(function(){$(this.remove())
+				});
+				});
+			});
+		</script>
+	</body>
+</html>

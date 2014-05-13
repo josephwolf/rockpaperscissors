@@ -192,6 +192,30 @@ describe("Rock-Paper-Scissors", function() {
 
       });
 
+      it('should describe the match when a winner is drawn', function() {
+
+        player1.picks('lizard');
+        player2.picks('paper');
+        expect(game.winningMessage()).toBe('lizard eats paper');
+        
+      });
+
+      it('should describe the match when a loser is drawn', function() {
+
+        player1.picks('rock');
+        player2.picks('spock');
+        expect(game.winningMessage()).toBe('spock vaporizes rock');
+        
+      });
+
+      it('should describe a draw', function() {
+
+        player1.picks('spock');
+        player2.picks('spock');
+        expect(game.winningMessage()).toBe('Draw!');
+        
+      });
+
     });
 
   });

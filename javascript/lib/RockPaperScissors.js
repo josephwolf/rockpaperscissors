@@ -33,6 +33,25 @@ Game.prototype.verbPicker = function() {
     };
 };
 
+Game.prototype.winningMessage = function() {
+
+	if(this.winner() === this.player1){
+	return [this.player1.pick,
+			this.verbPicker(),
+			this.player2.pick]
+			.join(' ');
+		}
+	else if(this.winner() === this.player2){
+	return [this.player2.pick,
+			this.verbPicker(),
+			this.player1.pick]
+			.join(' ');
+		}
+	else {
+		return 'Draw!'
+	};
+};
+
 Game.prototype.PAIRS = {
 	'rock' 		: {
 		scissors : 	'smashes',
@@ -54,6 +73,20 @@ Game.prototype.PAIRS = {
 	'spock' 	: {
 		scissors : 	'dismantles',
 		rock 	 : 	'vaporizes' }
+};
+
+Game.prototype.randChoice = function() {
+	var num = Math.floor(Math.random() * 5);
+	if(num === 0){
+	return 'rock';}
+	else if(num === 1){
+	return 'paper';}
+	else if(num === 2){
+	return 'scissors';}
+	else if(num === 3){
+	return 'lizard';}
+	else {
+	return 'spock'};
 };
 
 Game.prototype.isSamePick = function() {
