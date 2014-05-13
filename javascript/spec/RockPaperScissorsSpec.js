@@ -33,7 +33,7 @@ describe("Rock-Paper-Scissors", function() {
         player1.picks('rock');
         player2.picks('lizard');
         expect(game.winner()).toBe(player1);
-        
+
       });
 
     });
@@ -56,6 +56,14 @@ describe("Rock-Paper-Scissors", function() {
 
       });
 
+      it('should disprove spock', function() {
+
+        player1.picks('paper');
+        player2.picks('spock');
+        expect(game.winner()).toBe(player1);
+        
+      });
+
     });
 
     describe('scissors', function() {
@@ -76,6 +84,70 @@ describe("Rock-Paper-Scissors", function() {
 
       });
 
+      it('should decapitate lizard', function() {
+
+        player1.picks('scissors');
+        player2.picks('lizard');
+        expect(game.winner()).toBe(player1);
+        
+      });
+
+    });
+
+    describe('lizard', function() {
+
+      it('should beat spock', function() {
+
+        player1.picks('lizard');
+        player2.picks('spock');
+        expect(game.winner()).toBe(player1);
+
+      });
+
+      it('should lose to rock', function() {
+
+        player1.picks('lizard');
+        player2.picks('rock');
+        expect(game.winner()).toBe(player2);
+
+      });
+
+      it('should eat paper', function() {
+
+        player1.picks('lizard');
+        player2.picks('paper');
+        expect(game.winner()).toBe(player1);
+        
+      });
+
+    });
+
+    describe('spock', function() {
+
+      it('should beat scissors', function() {
+
+        player1.picks('spock');
+        player2.picks('scissors');
+        expect(game.winner()).toBe(player1);
+
+      });
+
+      it('should lose to lizard', function() {
+
+        player1.picks('spock');
+        player2.picks('lizard');
+        expect(game.winner()).toBe(player2);
+
+      });
+
+      it('should vaporize rock', function() {
+
+        player1.picks('spock');
+        player2.picks('rock');
+        expect(game.winner()).toBe(player1);
+        
+      });
+
     });
 
   });
@@ -93,6 +165,30 @@ describe("Rock-Paper-Scissors", function() {
         });
 
         expect(drawGameResults).toEqual([null, null, null]);
+
+      });
+
+    });
+
+  });
+
+  describe('verbs', function(){
+
+    describe('descriptive victories', function() {
+
+      it('should have a verb describing a player victory', function() {
+
+        player1.picks('lizard');
+        player2.picks('spock');
+        expect(game.verbPicker()).toBe('bites');
+
+      });
+
+      it('should have a verb describing a player loss', function() {
+
+        player1.picks('lizard');
+        player2.picks('scissors');
+        expect(game.verbPicker()).toBe('decapitates');
 
       });
 
