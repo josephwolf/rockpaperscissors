@@ -1,20 +1,23 @@
 <!doctype>
 <html>
 	<head>
-		<title>I made a game. :3</title>
-	</head>
+		<title>Existencial Nightmare Mode</title>
+		<link rel="stylesheet" type="text/css" href="public/stylesheets/stylesheet.css">
+		<link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'> 
+		</head>
 	<body>
-		<h1>CHOOSE YOUR DESTINY</h1>
+
+		<h1 id='rand_header'></h1>
 
 		<div class='choices'>
-			<a href="#" data-pick="rock">rock</a>
-			<a href="#" data-pick="scissors">scissors</a>
-			<a href="#" data-pick="paper">paper</a>
-			<a href="#" data-pick="lizard">lizard</a>
-			<a href="#" data-pick="spock">spock</a>
-
-
+			<img src="public/images/endlessvoidfinal.jpg" data-pick='endlessvoid'>
+			<img src="public/images/youfinal.jpg" data-pick='you'>
+			<img src="public/images/predeterfinal.jpg" data-pick='predeterm'>
+			<img src="public/images/terrorfinal.jpg" data-pick='terror'>
+			<img src="public/images/realityfinal.jpg" data-pick='reality'>
 		</div>
+
+		<h2>Please submit to the illusion of choice.</h2>
 		<ul id='results'>
 		</ul>
 
@@ -27,14 +30,15 @@
 				var computer = new Player('Computer');
 				var game = new Game(human, computer);
 
+				$('#rand_header').html(game.randHeader());
 
-				$('.choices a').on('click', function(){
+				$('.choices img').on('click', function(){
 					human.picks($(this).data('pick'));
 					computer.picks(game.randChoice());
 
-				$('<li>' + game.winningMessage() + '</li>').prependTo('#results').slideDown();
+				$('<li>' + game.winningMessage() + '</li>').prependTo('#results').animate({opacity: 1, height: '20px'});
 
-				$('li:nth-child(5)').fadeOut(function(){$(this.remove())
+				$('li:nth-child(7)').fadeOut(500, function(){$(this.remove())
 				});
 				});
 			});

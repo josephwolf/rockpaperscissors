@@ -35,58 +35,77 @@ Game.prototype.verbPicker = function() {
 
 Game.prototype.winningMessage = function() {
 
-	if(this.winner() === this.player1){
-	return [this.player1.pick,
+	if(this.winner() === this.player2){
+	return [this.PAIRS[this.player1.pick].titleOf,
 			this.verbPicker(),
-			this.player2.pick]
-			.join(' ');
+			this.PAIRS[this.player2.pick].titleOf]
+			.join(' ') + '. You lose.';
 		}
-	else if(this.winner() === this.player2){
-	return [this.player2.pick,
+	else if(this.winner() === this.player1){
+	return [this.PAIRS[this.player2.pick].titleOf,
 			this.verbPicker(),
-			this.player1.pick]
-			.join(' ');
+			this.PAIRS[this.player1.pick].titleOf]
+			.join(' ') + '. You win.';
 		}
 	else {
-		return 'Draw!'
+		return 'There are no winners.'
 	};
 };
 
 Game.prototype.PAIRS = {
-	'rock' 		: {
-		scissors : 	'smashes',
-		lizard   : 	'crushes' },
+	endlessvoid 		: {
+		titleOf :  		'The endless void',
+		terror : 		'is absent in',
+		reality : 		'is crushed under the weight of' },
 
-	'paper' 	: {
-		rock 	 : 	'covers',
-		spock 	 : 	'disproves' },
+	you				 	: {
+		titleOf :  		'The concept of you',
+		predeterm : 	'has no impact on',
+		endlessvoid : 	'is comprised entirely of' },
 
 
-	'scissors' 	: {
-		paper 	 : 	'cuts',
-		lizard 	 : 	'decapitates' },
+	terror			 	: {
+		titleOf :  		'Abject terror',
+		you : 			'is a slave to',
+		predeterm : 	'is ignored in' },
 
-	'lizard' 	: {
-		spock 	 : 	'bites',
-		paper 	 : 	'eats' },
+	predeterm 			: {
+		titleOf :  		'Predetermination',
+		endlessvoid : 	'is nullified by',
+		reality : 		'is made irrelevant by' },
 
-	'spock' 	: {
-		scissors : 	'dismantles',
-		rock 	 : 	'vaporizes' }
+	reality 			: {
+		titleOf :  		'Reality',
+		terror : 		'is never as bad as',
+		you : 			'cannot survive in' }
 };
 
 Game.prototype.randChoice = function() {
 	var num = Math.floor(Math.random() * 5);
 	if(num === 0){
-	return 'rock';}
+	return 'endlessvoid';}
 	else if(num === 1){
-	return 'paper';}
+	return 'you';}
 	else if(num === 2){
-	return 'scissors';}
+	return 'terror';}
 	else if(num === 3){
-	return 'lizard';}
+	return 'predeterm';}
 	else {
-	return 'spock'};
+	return 'reality'};
+};
+
+Game.prototype.randHeader = function() {
+	var num = Math.floor(Math.random() * 5);
+	if(num === 0){
+	return 'Does anything matter?';}
+	else if(num === 1){
+	return 'What ARE you?';}
+	else if(num === 2){
+	return 'Time has no meaning.';}
+	else if(num === 3){
+	return 'Nothing is real.';}
+	else {
+	return 'There is no being outside of perception.'};
 };
 
 Game.prototype.isSamePick = function() {
