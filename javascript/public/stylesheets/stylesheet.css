@@ -1,17 +1,6 @@
 body {
 	font-family: "Montserrat";
-	background: #ffffff no-repeat center center fixed;
-	background: -moz-linear-gradient(top,  #ffffff 61%, #ededed 84%, #b5b5b5 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(61%,#ffffff), color-stop(84%,#ededed), color-stop(100%,#b5b5b5));
-	background: -webkit-linear-gradient(top,  #ffffff 61%,#ededed 84%,#b5b5b5 100%);
-	background: -o-linear-gradient(top,  #ffffff 61%,#ededed 84%,#b5b5b5 100%);
-	background: -ms-linear-gradient(top,  #ffffff 61%,#ededed 84%,#b5b5b5 100%);
-	background: linear-gradient(to bottom,  #ffffff 61%,#ededed 84%,#b5b5b5 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b5b5b5',GradientType=0 );
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	background: #ffffff
 }
 
 h1 {
