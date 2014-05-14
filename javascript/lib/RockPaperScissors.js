@@ -82,30 +82,26 @@ Game.prototype.PAIRS = {
 
 Game.prototype.randChoice = function() {
 	var num = Math.floor(Math.random() * 5);
-	if(num === 0){
-	return 'endlessvoid';}
-	else if(num === 1){
-	return 'you';}
-	else if(num === 2){
-	return 'terror';}
-	else if(num === 3){
-	return 'predeterm';}
-	else {
-	return 'reality'};
+	choices = [
+		'endlessvoid',
+		'you',
+		'terror',
+		'predeterm',
+		'reality'
+	];
+	return choices[num];
 };
 
 Game.prototype.randHeader = function() {
 	var num = Math.floor(Math.random() * 5);
-	if(num === 0){
-	return 'Does anything matter?';}
-	else if(num === 1){
-	return 'What ARE you?';}
-	else if(num === 2){
-	return 'Time has no meaning.';}
-	else if(num === 3){
-	return 'Nothing is real.';}
-	else {
-	return 'There is no being outside of perception.'};
+	choices = [
+		'Does anything matter?',
+		'What ARE you?',
+		'Time has no meaning.',
+		'Nothing is real.',
+		'There is no being outside of perception.'
+	];
+	return choices[num];
 };
 
 Game.prototype.isSamePick = function() {
