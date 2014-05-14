@@ -1,6 +1,6 @@
 body {
 	font-family: "Montserrat";
-	background: #ffffff;
+	background: #ffffff no-repeat center center fixed;
 	background: -moz-linear-gradient(top,  #ffffff 61%, #ededed 84%, #b5b5b5 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(61%,#ffffff), color-stop(84%,#ededed), color-stop(100%,#b5b5b5));
 	background: -webkit-linear-gradient(top,  #ffffff 61%,#ededed 84%,#b5b5b5 100%);
@@ -8,6 +8,10 @@ body {
 	background: -ms-linear-gradient(top,  #ffffff 61%,#ededed 84%,#b5b5b5 100%);
 	background: linear-gradient(to bottom,  #ffffff 61%,#ededed 84%,#b5b5b5 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#b5b5b5',GradientType=0 );
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 
 h1 {
@@ -26,7 +30,6 @@ li {
 	background: -ms-linear-gradient(left,  rgba(143,162,183,0) 0%,rgba(143,162,183,0) 3%,rgba(143,162,183,1) 10%,rgba(143,162,183,1) 90%,rgba(143,162,183,0) 97%,rgba(143,162,183,0) 100%);
 	background: linear-gradient(to right,  rgba(143,162,183,0) 0%,rgba(143,162,183,0) 3%,rgba(143,162,183,1) 10%,rgba(143,162,183,1) 90%,rgba(143,162,183,0) 97%,rgba(143,162,183,0) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#008fa2b7', endColorstr='#008fa2b7',GradientType=1 );
-	background-size: 100%;
 
 	border-radius: 10px;
 	background-color: #CACCD9;
