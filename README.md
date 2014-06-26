@@ -2,4 +2,4 @@ This is a simple Rock-Paper-Scissors-Lizard-Spock game that uses the Sinatra fra
 
 It was made with the theme 'existential nightmare' for luls.
 
-The live version can be found at http://existentialnightmare.herokuapp.com
+The live version can be found at http://existential-nightmare.herokuapp.com
